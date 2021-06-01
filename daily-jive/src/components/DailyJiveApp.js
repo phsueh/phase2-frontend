@@ -1,6 +1,7 @@
 import NavBar from "./Navbar/NavBar"
 import SearchInput from "./Search"
 import React from "react"
+import PostForm from "./PostForm"
 
 
 
@@ -43,7 +44,7 @@ class DailyJivePage extends React.Component {
             <>
           <NavBar />
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-            
+          <PostForm/>
           </>
         )
     }
