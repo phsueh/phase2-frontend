@@ -1,7 +1,8 @@
 import NavBar from "./Navbar/NavBar"
 import SearchInput from "./Search"
 import React from "react"
-import PostForm from "./PostForm"
+import PostCollection from "./PostCollection"
+// import PostForm from "./PostForm"
 
 
 
@@ -21,7 +22,7 @@ class DailyJivePage extends React.Component {
     
     
     componentDidMount(){
-      fetch("http://localhost:3000/userInfo")
+      fetch("http://localhost:3000/jives")
       .then(res => res.json())
       .then(userArr => {
         this.setState({
@@ -44,7 +45,8 @@ class DailyJivePage extends React.Component {
             <>
           <NavBar />
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          <PostForm/>
+          {/* <PostForm/> */}
+          <PostCollection usersInfo ={this.state.usersInfo} />
           </>
         )
     }
