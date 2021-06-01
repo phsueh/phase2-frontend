@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
 
-import Navbar from './components/NavBar'
+import DailyJivePage from './components/DailyJiveApp'
 
 function App() {
   return (
     <>
-      <Navbar />
+      <DailyJivePage />
       
     </> 
     );
 }
 
 export default App;
-
-
