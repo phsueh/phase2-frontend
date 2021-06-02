@@ -1,5 +1,4 @@
 import NavItem from './Navitem'
-// import Categorys from '../Category'
 import React from 'react'
 
 
@@ -9,7 +8,6 @@ import React from 'react'
     return(
       <div className = 'navDiv'>
         <NavItem />
-        {/* <Categorys /> */}
       </div>
     )
 }
