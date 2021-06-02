@@ -2,7 +2,7 @@ import NavBar from "./Navbar/NavBar"
 import SearchInput from "./Search"
 import React from "react"
 import PostCollection from "./PostCollection"
-// import PostForm from "./PostForm"
+import PostForm from "./PostForm"
 
 
 
@@ -44,8 +44,8 @@ class DailyJivePage extends React.Component {
         return(
             <>
           <NavBar />
+          <PostForm/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          {/* <PostForm/> */}
           <PostCollection usersInfo ={this.state.usersInfo} />
           </>
         )
