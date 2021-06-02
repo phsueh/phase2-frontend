@@ -16,13 +16,19 @@ class DailyJivePage extends React.Component {
         whatIsChosen:"All"
       }
       
-      changeSearchTerm = (newTerm) => {
+    changeSearchTerm = (newTerm) => {
       this.setState ({
         searchTerm: newTerm 
       })
       }
     
-    
+    addPostToEndOfState = (newJive) => {
+      let arrOfJives = [...this.state.usersInfo, newJive]
+      this.setState({
+        usersInfo: arrOfJives
+      })
+    }
+
     componentDidMount(){
       fetch("http://localhost:3000/jives")
       .then(res => res.json())
@@ -61,7 +67,7 @@ class DailyJivePage extends React.Component {
             <>
           <NavBar />
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
-          <PostForm/>
+          <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
           <PostCollection usersInfo ={filteredPost} />
           </>
