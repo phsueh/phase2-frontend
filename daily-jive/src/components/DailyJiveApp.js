@@ -52,7 +52,7 @@ class DailyJivePage extends React.Component {
           <NavBar />
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          <PostCollection usersInfo ={filteredPost} />
+          <PostCollection  usersInfo ={filteredPost} />
           </>
         )
     }

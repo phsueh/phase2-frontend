@@ -16,7 +16,7 @@ return <PostCard key={usersInfoObj.id} usersInfoObj={usersInfoObj}/>
 
         // console.log(this.props.usersInfo)
         return (
-            <div className="post-collection">
+            <div className="post-collection" style={{padding: 10}}>
                 {this.renderPostCard()}
             </div>
         )

@@ -67,7 +67,6 @@ export default class PostCard extends Component {
                 favorite: newFavorite
                 })
             });
-
     }
 
     render() {
@@ -75,7 +74,7 @@ export default class PostCard extends Component {
         return (
             <div className="post_card">
                 <h1>{this.props.usersInfoObj.name}</h1>
-                <img src={this.props.usersInfoObj.pics} />
+                <img style={{width: 500}} src={this.props.usersInfoObj.pics}  />
                 <p>{this.props.usersInfoObj.post} </p>
                 <a href={this.props.usersInfoObj.url}>Find out more here: {this.props.usersInfoObj.url}</a>
                 <br></br>
@@ -83,7 +82,6 @@ export default class PostCard extends Component {
                 <button className="dislike-btn" onClick={this.handleDislike}>👎 {this.state.dislikes}</button>
                 <button className="fav-btn" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</button>
             </div>
-
         )
     }
 }

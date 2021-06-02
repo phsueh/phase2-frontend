@@ -14,6 +14,7 @@ const SearchBar = props => {
             <span className="visually-hidden">Search blog posts</span>
         </label>
         <input
+            style={{margin: 10}}
             value={props.searchTerm} onChange={handleChange}
             type="text"
             placeholder="Search blog posts"
