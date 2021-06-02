@@ -36,17 +36,17 @@ class DailyJivePage extends React.Component {
         
        let {usersInfo,searchTerm} = this.state
     
-       console.log(usersInfo)
-    //    let filteredPost = usersInfo.filter(usersInfoObj => {
-    //      return true
-    //    })
+       console.log(searchTerm)
+       let filteredPost = usersInfo.filter(usersInfoObj => {
+         return usersInfoObj.post.includes(searchTerm)
+       })
     
         return(
             <>
           <NavBar />
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
           {/* <PostForm/> */}
-          <PostCollection usersInfo ={this.state.usersInfo} />
+          <PostCollection usersInfo ={filteredPost} />
           </>
         )
     }

@@ -16,9 +16,8 @@ const SearchBar = props => {
         <input
             value={props.searchTerm} onChange={handleChange}
             type="text"
-            id="header-search"
             placeholder="Search blog posts"
-            name="s" 
+        
         />
         <button type="submit">Search</button>
     </form>
