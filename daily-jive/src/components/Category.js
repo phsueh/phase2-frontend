@@ -6,7 +6,7 @@ class CategorysSlots extends Component {
    
    helpChange =(e) => {
 //   console.log(e.target.value)
- this.props.changeWhatIsChosen(e.target.vaule)
+ this.props.changeWhatIsChosen(e.target.value)
    }
 
     render() {

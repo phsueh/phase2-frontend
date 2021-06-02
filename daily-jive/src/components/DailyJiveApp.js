@@ -47,17 +47,21 @@ class DailyJivePage extends React.Component {
     }
     
     render(){
-        console.log(this.state.usersInfo)
+        // console.log(this.state.usersInfo)
 
-       let { usersInfo, searchTerm} = this.state
+       let {searchTerm} = this.state
     
-    //    let usersInfo = this.state.usersInfoObj.filter(jives=> {
-    //        return jives.type === "Sports"
-    //        })
+      let usersInfo = this.state.usersInfo.filter(jives=> {
+        return jives.type === this.state.whatIsChosen
+        })
+
+        if(this.state.whatIsChosen === "All"){
+            usersInfo = this.state.usersInfo
+        }
     //    let arrayOfJives = this.state.jives.filter(jives=> {
     //    return jives.type === "Sports"
     //    })
-    
+     
     //    console.log(searchTerm)
        let filteredPost = usersInfo.filter(usersInfoObj => {
          return usersInfoObj.post.includes(searchTerm)
