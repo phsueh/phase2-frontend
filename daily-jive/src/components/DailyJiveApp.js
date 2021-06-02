@@ -14,13 +14,19 @@ class DailyJivePage extends React.Component {
         searchTerm: ""
       }
       
-      changeSearchTerm = (newTerm) => {
+    changeSearchTerm = (newTerm) => {
       this.setState ({
         searchTerm: newTerm 
       })
       }
     
-    
+    addPostToEndOfState = (newJive) => {
+      let arrOfJives = [...this.state.usersInfo, newJive]
+      this.setState({
+        usersInfo: arrOfJives
+      })
+    }
+
     componentDidMount(){
       fetch("http://localhost:3000/jives")
       .then(res => res.json())
@@ -36,17 +42,17 @@ class DailyJivePage extends React.Component {
         
        let {usersInfo,searchTerm} = this.state
     
-       console.log(usersInfo)
-    //    let filteredPost = usersInfo.filter(usersInfoObj => {
-    //      return true
-    //    })
+       console.log(searchTerm)
+       let filteredPost = usersInfo.filter(usersInfoObj => {
+         return usersInfoObj.post.includes(searchTerm)
+       })
     
         return(
             <>
           <NavBar />
-          <PostForm/>
+          <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          <PostCollection usersInfo ={this.state.usersInfo} />
+          <PostCollection usersInfo ={filteredPost} />
           </>
         )
     }

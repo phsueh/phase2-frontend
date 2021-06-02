@@ -6,8 +6,11 @@ class PostForm extends React.Component {
   state = {
     name: "",
     type: "",
-    post: "",
-    url: ""
+    post: "", 
+    url: "",
+    likes: "",
+    dislikes: "",
+    favorite: ""
   }
 
   handleChange = (e) => {
@@ -24,6 +27,9 @@ class PostForm extends React.Component {
       type: this.state.type,
       post: this.state.post,
       url: this.state.url,
+      likes: this.state.likes,
+      dislikes: this.state.dislikes,
+      favorite: this.state.favorite,
     }
     
     fetch("http://localhost:3000/jives", {
@@ -40,7 +46,10 @@ class PostForm extends React.Component {
           name: "",
           type: "",
           post: "",
-          url: ""
+          url: "",
+          likes: "",
+          dislikes: "",
+          favorite: false
         })
       })
   }
@@ -56,7 +65,8 @@ class PostForm extends React.Component {
             <Form.Input fluid label="Name" placeholder="Name" name="name" onChange={this.handleChange} value={this.state.name}/>
             <Form.Input fluid label="Type" placeholder="Type" name="type" onChange={this.handleChange} value={this.state.type} />
             <Form.Input fluid label="Post" placeholder="Post" name="post" onChange={this.handleChange} value={this.state.post} />
-            <Form.Input fluid label="URL" placeholder="URL" name="url" onChange={this.handleChange} value={this.state.url} />
+            <Form.Input fluid label="Picture" placeholder="Picture URL" name="pics" onChange={this.handleChange} value={this.state.pics} />
+            <Form.Input fluid label="Website" placeholder="Website URL" name="url" onChange={this.handleChange} value={this.state.url} />
           </Form.Group>
           <Form.Button>Submit</Form.Button>
         </Form>
