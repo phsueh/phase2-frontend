@@ -28,6 +28,7 @@
 
 div .navDiv{
   background-color: rgb(148, 230, 230);
+<<<<<<< HEAD
 }
 
 .visually-hidden {
@@ -38,4 +39,6 @@ div .navDiv{
   position: absolute;
   white-space: nowrap;
   width: 1px;
+=======
+>>>>>>> dbde6f17f31e5584db7079bf735f2b50b328c92d
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React from "react"
 
@@ -26,3 +27,16 @@ const SearchBar = props => {
 
 
 export default SearchBar;
+=======
+export default function searchBar() {
+    return(
+        <>
+            <label htmlFor="site-search">Search the site:</label>
+    <input type="search" id="site-search" name="q"
+       aria-label="Search through site content"></input>
+
+   <button>Search</button>
+   </>
+    )
+}
+>>>>>>> dbde6f17f31e5584db7079bf735f2b50b328c92d
