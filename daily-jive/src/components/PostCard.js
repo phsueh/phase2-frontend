@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { Card, Image, Button } from 'semantic-ui-react'
+import { Card, Button } from 'semantic-ui-react'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 export default class PostCard extends Component {
 
@@ -96,6 +99,9 @@ export default class PostCard extends Component {
                     <Button attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
                     <Button attached="bottom" onClick={this.handleDelete}>❌</Button>
                 </Button.Group>
+                <Popup trigger={<button> Edit</button>} position="right center">
+                        <div>Popup content here !!</div>
+                    </Popup>
             </Card>
             
         )
