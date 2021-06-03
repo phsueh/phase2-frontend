@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PostCard from './PostCard'
+import { Card } from 'semantic-ui-react'
 
 export default class PostCollection extends Component {
 
@@ -12,13 +13,13 @@ return <PostCard key={usersInfoObj.id} usersInfoObj={usersInfoObj}/>
 
 // map out array from 
     render() {
-
-
-        // console.log(this.props.usersInfo)
         return (
-            <div className="post-collection" style={{padding: 10}}>
+        // console.log(this.props.usersInfo)
+        <Card.Group itemsPerRow={4}>
+            {/* <div className="post-collection" style={{padding: 10}}> */}
                 {this.renderPostCard()}
-            </div>
+            {/* </div> */}
+        </Card.Group>
         )
     }
 }
