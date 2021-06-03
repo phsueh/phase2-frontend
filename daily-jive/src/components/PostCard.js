@@ -120,11 +120,12 @@ export default class PostCard extends Component {
             pics: "", 
             url: "",
             })
+            {this.props.edit()}
         })
     }
 
     render() {
-        // console.log(this.props)
+        // console.log(this.props)  
         return (
             <Card>
                 <h1>{this.props.usersInfoObj.name}</h1>
@@ -139,7 +140,7 @@ export default class PostCard extends Component {
                     // <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDelete}>❌</Button>
                 </Button.Group>
                 <Popup trigger={<button style={{padding: 10, margin: 5}}>✏️ Edit Post</button>} modal>
-                        <div style={this.customStyles}>
+                        <div>
                             <Form style={{padding: 10, margin: 5}}onSubmit={this.postEdit}>
                             <Form.Group style={{padding: 5}} widths="equal" >
                                 <Form.Input fluid label="Title" placeholder="Title" name="name" onChange={this.handleEdit} value={this.state.name} />

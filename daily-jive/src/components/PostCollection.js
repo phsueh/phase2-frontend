@@ -6,7 +6,7 @@ export default class PostCollection extends Component {
 
  renderPostCard =  () => {
     return  this.props.usersInfo.map((usersInfoObj) => {
-        return <PostCard key={usersInfoObj.id} usersInfoObj={usersInfoObj} delete={this.props.delete}/>
+        return <PostCard key={usersInfoObj.id} usersInfoObj={usersInfoObj} delete={this.props.delete} edit={this.props.edit}/>
 
   }) 
  }

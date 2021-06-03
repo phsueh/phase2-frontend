@@ -23,6 +23,17 @@ class DailyJivePage extends React.Component {
         })
       })
     }
+
+    updateMount = () => {
+      fetch("http://localhost:3000/jives")
+      .then(res => res.json())
+      .then(userArr => {
+        this.setState({
+          usersInfo: userArr
+        })
+      })
+    }
+    
       
     changeSearchTerm = (newTerm) => {
       this.setState ({
@@ -81,7 +92,7 @@ class DailyJivePage extends React.Component {
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
-          <PostCollection  usersInfo ={filteredPost} delete={this.deletePost}/>
+          <PostCollection  usersInfo ={filteredPost} delete={this.deletePost} edit={this.updateMount}/>
           </>
         )
     }

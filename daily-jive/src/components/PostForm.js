@@ -72,7 +72,8 @@ class PostForm extends React.Component {
               <option value="Sports">Sports</option>
               <option value="News">News</option>
               <option value="Gaming">Gaming</option>
-              <option value="Movies">Movies</option>  
+              <option value="Movies">Movies</option>
+              <option value="TV Shows">TV Shows</option>  
               <option value="Coding">Coding</option>
               <option value="Animals">Animals</option>
             </Form.Input>
