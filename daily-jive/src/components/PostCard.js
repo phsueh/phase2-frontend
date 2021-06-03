@@ -85,7 +85,7 @@ export default class PostCard extends Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <Card>
                 <h1>{this.props.usersInfoObj.name}</h1>

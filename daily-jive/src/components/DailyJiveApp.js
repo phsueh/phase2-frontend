@@ -3,6 +3,7 @@ import SearchInput from "./Search"
 import React from "react"
 import PostCollection from "./PostCollection"
 import PostForm from "./PostForm"
+import CategorysSlots from "./Category"
 
 
 
@@ -11,7 +12,8 @@ class DailyJivePage extends React.Component {
     
     state= {
         usersInfo: [],
-        searchTerm: ""
+        searchTerm: "",
+        whatIsChosen:"All"
       }
 
     componentDidMount(){
@@ -46,12 +48,31 @@ class DailyJivePage extends React.Component {
         })
       })
     }
-
-    render(){
-        
-       let {usersInfo,searchTerm} = this.state
     
-       console.log(searchTerm)
+
+    changeWhatIsChosen = (newChoice) => {
+        this.setState({
+            whatIsChosen: newChoice
+        })
+    }
+    
+    render(){
+        // console.log(this.state.usersInfo)
+
+       let {searchTerm} = this.state
+    
+      let usersInfo = this.state.usersInfo.filter(jives=> {
+        return jives.type === this.state.whatIsChosen
+        })
+
+        if(this.state.whatIsChosen === "All"){
+            usersInfo = this.state.usersInfo
+        }
+    //    let arrayOfJives = this.state.jives.filter(jives=> {
+    //    return jives.type === "Sports"
+    //    })
+     
+    //    console.log(searchTerm)
        let filteredPost = usersInfo.filter(usersInfoObj => {
          return usersInfoObj.post.includes(searchTerm)
        })
@@ -61,6 +82,7 @@ class DailyJivePage extends React.Component {
           <NavBar />
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
+          <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
           <PostCollection  usersInfo ={filteredPost} delete={this.deletePost}/>
           </>
         )
