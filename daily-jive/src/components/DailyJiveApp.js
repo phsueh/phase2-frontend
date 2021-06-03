@@ -4,6 +4,7 @@ import React from "react"
 import PostCollection from "./PostCollection"
 import PostForm from "./PostForm"
 import CategorysSlots from "./Category"
+import Login from "./Login"
 
 
 
@@ -70,6 +71,7 @@ class DailyJivePage extends React.Component {
         return(
             <>
           <NavBar />
+          <Login />
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>

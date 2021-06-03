@@ -6,7 +6,7 @@ import React from 'react'
   
   render() {
     return(
-      <div className = 'navDiv'>
+      <div>
         <NavItem />
       </div>
     )
