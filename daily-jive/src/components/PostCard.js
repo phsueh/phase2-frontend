@@ -70,6 +70,17 @@ export default class PostCard extends Component {
             });
     }
 
+    handleDelete = () => {
+        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+            method: "DELETE",
+            })
+            .then((r) => r.json())
+            .then(() => {
+                this.props.delete()
+                console.log("Deleted")
+            });
+    }
+
     render() {
         console.log(this.props)
         return (
@@ -83,10 +94,8 @@ export default class PostCard extends Component {
                     <Button attached="bottom" size="large" onClick={this.handleLike}>👍 {this.state.likes}</Button>
                     <Button attached="bottom" onClick={this.handleDislike}>👎 {this.state.dislikes}</Button>
                     <Button attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
+                    <Button attached="bottom" onClick={this.handleDelete}>❌</Button>
                 </Button.Group>
-                {/* <button className="like-btn" onClick={this.handleLike} >👍 {this.state.likes}</button>
-                <button className="dislike-btn" onClick={this.handleDislike}>👎 {this.state.dislikes}</button>
-                <button className="fav-btn" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</button> */}
             </Card>
             
         )
