@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Card, Image, Button } from 'semantic-ui-react'
+import { Card, Button } from 'semantic-ui-react'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { Form } from 'semantic-ui-react'
 
 export default class PostCard extends Component {
 
