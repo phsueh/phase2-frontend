@@ -73,6 +73,8 @@ class PostForm extends React.Component {
               <option value="News">News</option>
               <option value="Gaming">Gaming</option>
               <option value="Movies">Movies</option>  
+              <option value="Coding">Coding</option>
+              <option value="Animals">Animals</option>
             </Form.Input>
           </Form.Group>
           <Form.Group style={{padding: 10}} widths= "equal">

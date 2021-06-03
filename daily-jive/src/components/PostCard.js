@@ -148,8 +148,10 @@ export default class PostCard extends Component {
                                 <Form.Input control="select" fluid label="Type" placeholder="Type" name="type" onChange={this.handleEdit} value={this.state.type}>
                                     <option value="Sports">Sports</option>
                                     <option value="News">News</option>
-                                    <option value="Video Games">Video Games</option>
+                                    <option value="Gaming">Gaming</option>
                                     <option value="Movies">Movies</option>  
+                                    <option value="Coding">Coding</option>
+                                    <option value="Animals">Animals</option>
                                 </Form.Input>
                             </Form.Group>
                             <Form.Group style={{padding: 5}} widths= "equal">

@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: turquoise;
+  background-color: rgb(80, 83, 83);
   overflow: hidden;
 }
 

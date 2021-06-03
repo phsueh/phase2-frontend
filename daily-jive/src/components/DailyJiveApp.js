@@ -6,8 +6,6 @@ import PostForm from "./PostForm"
 import CategorysSlots from "./Category"
 
 
-
-
 class DailyJivePage extends React.Component {
     
     state= {
