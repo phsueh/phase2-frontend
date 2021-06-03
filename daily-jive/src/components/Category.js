@@ -16,7 +16,7 @@ class CategorysSlots extends Component {
     return(
         <div>
          <h2>Filter By Categorys</h2>
-         <select id="map" value={this.props.whatIsChosen} onChange={this.helpChange}>
+         <select id="map" style={{margin:50, height:40, width:400 }} value={this.props.whatIsChosen} onChange={this.helpChange}>
              <option value="All">All</option>
              <option value="Music">Music</option>
              <option value="Sports">Sports</option>
