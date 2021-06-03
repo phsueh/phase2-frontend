@@ -60,21 +60,18 @@ class PostForm extends React.Component {
   
   render() {
     // console.log(this.state)
-
-
     return (
       <div>
-        <h2 style={{padding: 10, color: "rgb(100, 98, 98)" }}>Add a Jive! </h2>
+        <h1 style={{padding: 10, color: 'black'}}>Add a Jive! </h1>
         <Form size={'massive'} onSubmit={this.handleSubmit}>
           <Form.Group style={{padding: 10}} widths="equal" >
             <Form.Input fluid label="Title" placeholder="Title" name="name" onChange={this.handleChange} value={this.state.name}/>
-            {/* <Form.Input fluid label="Post" placeholder="Post" name="post" onChange={this.handleChange} value={this.state.post} /> */}
             <Form.Input fluid label="Picture" placeholder="Picture URL" name="pics" onChange={this.handleChange} value={this.state.pics} />
             <Form.Input fluid label="Website" placeholder="Website URL" name="url" onChange={this.handleChange} value={this.state.url} />
             <Form.Input control="select" fluid label="Type" placeholder="Type" name="type" onChange={this.handleChange} value={this.state.type}>
               <option value="Sports">Sports</option>
               <option value="News">News</option>
-              <option value="Video Games">Video Games</option>
+              <option value="Gaming">Gaming</option>
               <option value="Movies">Movies</option>  
             </Form.Input>
           </Form.Group>

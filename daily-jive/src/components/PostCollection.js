@@ -15,11 +15,11 @@ export default class PostCollection extends Component {
     render() {
         return (
         // console.log(this.props.usersInfo)
-        <Card.Group itemsPerRow={4}>
+        <Card.Group itemsPerRow={4} style={{padding: 10}}>
             {/* <div className="post-collection" style={{padding: 10}}> */}
                 {this.renderPostCard()}
             {/* </div> */}
         </Card.Group>
         )
-    }
+    } 
 }

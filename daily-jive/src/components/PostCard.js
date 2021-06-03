@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 export default class PostCard extends Component {
 
@@ -91,11 +93,14 @@ export default class PostCard extends Component {
                 <a href={this.props.usersInfoObj.url}>Find out more here: {this.props.usersInfoObj.url}</a>
                 <br></br>
                 <Button.Group>
-                    <Button attached="bottom" size="large" onClick={this.handleLike}>👍 {this.state.likes}</Button>
-                    <Button attached="bottom" onClick={this.handleDislike}>👎 {this.state.dislikes}</Button>
-                    <Button attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
-                    <Button attached="bottom" onClick={this.handleDelete}>❌</Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" size="large" onClick={this.handleLike}>👍 {this.state.likes}</Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDislike}>👎 {this.state.dislikes}</Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDelete}>❌</Button>
                 </Button.Group>
+                <Popup trigger={<button> Edit</button>} position="right center">
+                        <div>Popup content here !!</div>
+                </Popup>
             </Card>
             
         )
