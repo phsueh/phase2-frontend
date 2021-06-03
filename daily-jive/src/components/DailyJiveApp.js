@@ -73,7 +73,7 @@ class DailyJivePage extends React.Component {
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          <PostCollection usersInfo ={filteredPost} />
+          <PostCollection  usersInfo ={filteredPost} />
           </>
         )
     }

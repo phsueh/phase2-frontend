@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { Card, Image, Button } from 'semantic-ui-react'
 
 export default class PostCard extends Component {
 
     state = {
         likes: this.props.usersInfoObj.likes, 
         dislikes: this.props.usersInfoObj.dislikes,
-        favorite: null
+        favorite: false
     }
 
     handleLike = () => {
@@ -37,7 +38,7 @@ export default class PostCard extends Component {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                likes: currentDislikes ++
+                dislikes: currentDislikes ++
             }),
             })
             .then((r) => r.json())
@@ -50,7 +51,7 @@ export default class PostCard extends Component {
 
 
     handleFavorite = () => {
-        let newFavorite = true
+        let newFavorite = !this.state.favorite
 
         fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
             method: "PATCH",
@@ -67,23 +68,27 @@ export default class PostCard extends Component {
                 favorite: newFavorite
                 })
             });
-
     }
 
     render() {
         // console.log(this.props)
         return (
-            <div className="post_card">
+            <Card>
                 <h1>{this.props.usersInfoObj.name}</h1>
-                <img src={this.props.usersInfoObj.pics} />
-                <p> {this.props.usersInfoObj.post} </p>
+                <img src={this.props.usersInfoObj.pics}  />
+                <p>{this.props.usersInfoObj.post} </p>
                 <a href={this.props.usersInfoObj.url}>Find out more here: {this.props.usersInfoObj.url}</a>
                 <br></br>
-                <button className="like-btn" onClick={this.handleLike} >👍 {this.state.likes}</button>
+                <Button.Group>
+                    <Button attached="bottom" size="large" onClick={this.handleLike}>👍 {this.state.likes}</Button>
+                    <Button attached="bottom" onClick={this.handleDislike}>👎 {this.state.dislikes}</Button>
+                    <Button attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
+                </Button.Group>
+                {/* <button className="like-btn" onClick={this.handleLike} >👍 {this.state.likes}</button>
                 <button className="dislike-btn" onClick={this.handleDislike}>👎 {this.state.dislikes}</button>
-                <button className="fav-btn" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</button>
-            </div>
-
+                <button className="fav-btn" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</button> */}
+            </Card>
+            
         )
     }
 }
