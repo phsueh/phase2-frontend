@@ -9,18 +9,17 @@ const SearchBar = props => {
    }
   
    return (
-    <form action="/" method="get">
+    <form className="form2" action="/" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search blog posts</span>
         </label>
-        <input
-            style={{margin: 10}}
+        <input className="searchInput"
+            style={{margin:50, height:40, width:400 }}
             value={props.searchTerm} onChange={handleChange}
             type="text"
             placeholder="Search blog posts"
         
         />
-        <button type="submit">Search</button>
     </form>
    )
 };
