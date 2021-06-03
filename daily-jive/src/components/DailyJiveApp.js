@@ -15,6 +15,16 @@ class DailyJivePage extends React.Component {
         searchTerm: "",
         whatIsChosen:"All"
       }
+
+    componentDidMount(){
+      fetch("http://localhost:3000/jives")
+      .then(res => res.json())
+      .then(userArr => {
+        this.setState({
+          usersInfo: userArr
+        })
+      })
+    }
       
     changeSearchTerm = (newTerm) => {
       this.setState ({
@@ -29,12 +39,12 @@ class DailyJivePage extends React.Component {
       })
     }
 
-    componentDidMount(){
+    deletePost = () => {
       fetch("http://localhost:3000/jives")
       .then(res => res.json())
-      .then(userArr => {
+      .then(updatedUserArr => {
         this.setState({
-          usersInfo: userArr
+          usersInfo: updatedUserArr
         })
       })
     }
@@ -73,7 +83,7 @@ class DailyJivePage extends React.Component {
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-          <PostCollection  usersInfo ={filteredPost} />
+          <PostCollection  usersInfo ={filteredPost} delete={this.deletePost}/>
           </>
         )
     }
