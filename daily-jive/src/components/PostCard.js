@@ -128,18 +128,18 @@ export default class PostCard extends Component {
         // console.log(this.props)  
         return (
             <Card>
-                <h1>{this.props.usersInfoObj.name}</h1>
-                <img src={this.props.usersInfoObj.pics}  />
-                <p>{this.props.usersInfoObj.post} </p>
-                <a href={this.props.usersInfoObj.url}>Find out more here: {this.props.usersInfoObj.url}</a>
+                <h1 className= "cardtitle" >{this.props.usersInfoObj.name}</h1>
+                <img className= "cardIMG"src={this.props.usersInfoObj.pics ? this.props.usersInfoObj.pics : 'https://kubalubra.is/wp-content/uploads/2017/11/default-thumbnail.jpg' } />
+                <p className= "cardPost">{this.props.usersInfoObj.post}  </p>
+                <a  className= "cardlink"href={this.props.usersInfoObj.url}>Find out more here: {this.props.usersInfoObj.url}</a>
                 <br></br>
                 <Button.Group>
-                    <Button style={{padding: 10, margin: 5}} attached="bottom" size="large" onClick={this.handleLike}>👍 {this.state.likes}</Button>
-                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDislike}>👎 {this.state.dislikes}</Button>
-                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleFavorite}>{this.state.favorite ? '🙉' : '🙈'}</Button>
-                    // <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDelete}>❌</Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" size="large" onClick={this.handleLike}><span className= "cardLikeButton" >👍 {this.state.likes}</span></Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDislike}><span className= "cardDislikeButton">👎 {this.state.dislikes}</span></Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleFavorite}><span className= "cardFavoriteButton">{this.state.favorite ? '🙉' : '🙈'}</span></Button>
+                    <Button style={{padding: 10, margin: 5}} attached="bottom" onClick={this.handleDelete}><span className= "cardDeleteButton">❌</span></Button>
                 </Button.Group>
-                <Popup trigger={<button style={{padding: 10, margin: 5}}>✏️ Edit Post</button>} modal>
+                <Popup trigger={<button style={{padding: 10, margin: 5}}><span className= "cardEditButton">✏️ Edit Post</span></button>} modal>
                         <div>
                             <Form style={{padding: 10, margin: 5}}onSubmit={this.postEdit}>
                             <Form.Group style={{padding: 5}} widths="equal" >

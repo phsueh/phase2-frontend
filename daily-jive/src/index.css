@@ -41,14 +41,50 @@ div .navDiv{
   white-space: nowrap;
   width: 1px;
 }
-
-
   
 body {
   background-color: #42378f;
 background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
 } 
 
+.cardtitle {
+  font-size: 40px
+}
+
+.cardIMG{
+  max-width: 736px;
+  height: auto;
+  max-height: 500px;
+  width: auto;
+  margin : auto;
+}
+
+.cardPost {
+  font-size: 20px;
+}
+
+.cardlink {
+  font-size: 20px;
+}
+
+.cardLikeButton{
+  font-size: 25px;
+}
+
+.cardDislikeButton{
+  font-size: 25px;
+}
+.cardFavoriteButton{
+  font-size: 25px;
+}
+
+.cardDeleteButton{
+  font-size: 25px;
+}
+
+.cardEditButton{
+  font-size: 25px;
+}
 
 .modal {
   font-size: 12px;
