@@ -21,7 +21,7 @@ export default class PostCard extends Component {
     handleLike = () => {
         let currentLikes = this.state.likes
 
-        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+        fetch(`http://localhost:9393/jives/${this.props.usersInfoObj.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default class PostCard extends Component {
     handleDislike = () => {
         let currentDislikes = this.state.dislikes 
 
-        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+        fetch(`http://localhost:9393/jives/${this.props.usersInfoObj.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default class PostCard extends Component {
     handleFavorite = () => {
         let newFavorite = !this.state.favorite
 
-        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+        fetch(`http://localhost:9393/jives/${this.props.usersInfoObj.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default class PostCard extends Component {
     }
 
     handleDelete = () => {
-        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+        fetch(`http://localhost:9393/jives/${this.props.usersInfoObj.id}`, {
             method: "DELETE",
             })
             .then((r) => r.json())
@@ -98,7 +98,7 @@ export default class PostCard extends Component {
 
     postEdit = () => {
 
-        fetch(`http://localhost:3000/jives/${this.props.usersInfoObj.id}`, {
+        fetch(`http://localhost:9393/jives/${this.props.usersInfoObj.id}`, {
         method: "PATCH",
         headers: {
             "Content-type": "application/json"

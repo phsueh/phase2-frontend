@@ -11,7 +11,8 @@ class PostForm extends React.Component {
     url: "",
     likes: "",
     dislikes: "",
-    favorite: ""
+    favorite: "",
+    user_id: ""
   }
 
   handleChange = (e) => {
@@ -34,7 +35,7 @@ class PostForm extends React.Component {
       favorite: this.state.favorite,
     }
     
-    fetch("http://localhost:3000/jives", {
+    fetch("http://localhost:9393/jives", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -46,13 +47,13 @@ class PostForm extends React.Component {
         this.props.addPostToEndOfState(newlyCreatedPost)
         this.setState({
           name: "",
-          type: "",
+          post_type: "",
           post: "",
           pics: "", 
           url: "",
           likes: "",
           dislikes: "",
-          favorite: false
+          user_id: 1
         })
       })
   }

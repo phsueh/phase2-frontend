@@ -7,7 +7,7 @@ import React from 'react'
   render() {
     return(
       <div>
-        <NavItem />
+        <NavItem setLoginState={this.props.setLoginState}/>
       </div>
     )
 }

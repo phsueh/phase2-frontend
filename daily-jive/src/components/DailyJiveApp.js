@@ -9,13 +9,28 @@ import CategorysSlots from "./Category"
 class DailyJivePage extends React.Component {
     
     state= {
+        id: 0,
         usersInfo: [],
         searchTerm: "",
-        whatIsChosen:"All"
+        whatIsChosen:"All",
+        username: "",
+        password: ""
       }
 
+    setUser = (user) => {
+
+      this.setState({
+        id: user.id,
+        username: user.username,
+        courses: user.courses
+      })
+      // CHANGE THE URL
+      // this.props.history.push("/jives")
+  
+    }
+
     componentDidMount(){
-      fetch("http://localhost:3000/jives")
+      fetch("http://localhost:9393/jives")
       .then(res => res.json())
       .then(userArr => {
         this.setState({
@@ -25,7 +40,7 @@ class DailyJivePage extends React.Component {
     }
 
     updateMount = () => {
-      fetch("http://localhost:3000/jives")
+      fetch("http://localhost:9393/jives")
       .then(res => res.json())
       .then(userArr => {
         this.setState({
@@ -49,7 +64,7 @@ class DailyJivePage extends React.Component {
     }
 
     deletePost = () => {
-      fetch("http://localhost:3000/jives")
+      fetch("http://localhost:9393/jives")
       .then(res => res.json())
       .then(updatedUserArr => {
         this.setState({
@@ -88,7 +103,7 @@ class DailyJivePage extends React.Component {
     
         return(
             <>
-          <NavBar />
+          <NavBar setLoginState={this.setUser}/>
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
