@@ -11,7 +11,6 @@ class PostForm extends React.Component {
     url: "",
     likes: "",
     dislikes: "",
-    favorite: "",
     user_id: ""
   }
 
@@ -32,7 +31,7 @@ class PostForm extends React.Component {
       url: this.state.url,
       likes: this.state.likes,
       dislikes: this.state.dislikes,
-      favorite: this.state.favorite,
+      user_id: this.state.user_id
     }
     
     fetch("http://localhost:9393/jives", {

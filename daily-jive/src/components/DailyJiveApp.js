@@ -4,6 +4,7 @@ import React from "react"
 import PostCollection from "./PostCollection"
 import PostForm from "./PostForm"
 import CategorysSlots from "./Category"
+import { Label } from 'semantic-ui-react'
 
 
 class DailyJivePage extends React.Component {
@@ -13,7 +14,7 @@ class DailyJivePage extends React.Component {
         usersInfo: [],
         searchTerm: "",
         whatIsChosen:"All",
-        username: "",
+        username: "please sign in",
         password: ""
       }
 
@@ -83,9 +84,9 @@ class DailyJivePage extends React.Component {
     render(){
         // console.log(this.state.usersInfo)
 
-       let {searchTerm} = this.state
+        let {searchTerm} = this.state
     
-      let usersInfo = this.state.usersInfo.filter(jives=> {
+        let usersInfo = this.state.usersInfo.filter(jives=> {
         return jives.type === this.state.whatIsChosen
         })
 
@@ -97,13 +98,15 @@ class DailyJivePage extends React.Component {
     //    })
      
     //    console.log(searchTerm)
-       let filteredPost = usersInfo.filter(usersInfoObj => {
+        let filteredPost = usersInfo.filter(usersInfoObj => {
          return usersInfoObj.post.includes(searchTerm)
-       })
-    
+          })
+          
+
         return(
             <>
           <NavBar setLoginState={this.setUser}/>
+          <Label as='a' basic>Welcome, {this.state.username}!</Label>
           <PostForm addPostToEndOfState={this.addPostToEndOfState}/>
           <SearchInput searchTerm = {searchTerm} changeSearchTerm={this.changeSearchTerm}/>
           <CategorysSlots whatIsChosen = {this.state.whatIsChosen} changeWhatIsChosen={this.changeWhatIsChosen}/>
